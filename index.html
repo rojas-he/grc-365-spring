@@ -67,6 +67,14 @@
 		text-decoration: none;alignment-baseline: 
 	} a li:hover {
 		background: khaki;
+	} button {
+		width: 100px;
+		height: 40px;
+		background: lightgreen;
+		border: 1px solid dimgray;
+		border-radius: 12px;
+		display: block;
+		margin: 0 auto;
 	} @media only screen and (max-width: 750px) {
 		#page {
 			height: auto;
@@ -76,6 +84,10 @@
 			margin-bottom: 36px;
 		} p {
 			font: 18pt/1.6em Georgia;
+		}
+	} @media print {
+		button {
+			display: none;
 		}
 	}
 </style>
@@ -98,6 +110,7 @@
 	<p><img class="text-img" src="alex hirsh.jpg" /><span class="drop-cap">G</span>ravity Falls achieved remarkable success both critically and commercially, becoming one of the most acclaimed animated series of its time. Created by Alex Hirsch, the show captivated audiences with its clever storytelling, intricate mysteries, and rich character development. Its unique blend of humor, supernatural elements, and heartfelt moments resonated with viewers of all ages, earning it a dedicated fanbase and praise from critics for its originality and depth. The series intricate plot arcs and Easter eggs fostered intense viewer engagement, encouraging discussions and theories, which contributed to its cultural impact.</p>
 		
 	<p style="margin-bottom: 96px;">The show's success extended beyond entertainment, influencing popular culture and inspiring a wide range of merchandise, comics, and fan creations. Gravity Falls also received numerous awards, including Annie Awards and a Primetime Emmy nomination, solidifying its reputation as a high-quality animated series. Its thoughtful storytelling and memorable characters established a lasting legacy, with many fans and creators citing it as a significant influence on modern animation and storytelling. Overall, Gravity Falls is celebrated for its innovative approach, compelling narrative, and its ability to appeal across generations.</p>
+	<button onClick="window.print();">Print Page</button>
 	</div>
 </body>
 </html>
