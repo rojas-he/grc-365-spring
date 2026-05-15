@@ -1,0 +1,140 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>animation</title>
+	@font-face {
+		font-family: Segoe;
+		src: url("Segoe WP Bold.ttf");
+	}
+<meta name="description" content="A webpage dedicated to Mabel's love for her pet pig Waddles with an animation dedicated to their bond. It is also connected to a website dedicated to the animated TV series Gravity Falls and the impact it has on the western animation and storytelling industry." />
+<meta name="keywords" content="Gravity Falls, Mabel, Waddles, pet pig, Mystery Shack, pine twin" />
+<style>
+	 body {
+		background: whitesmoke;
+	} #page {
+		width: 1024px;
+		height: 1348px;
+		background: white;
+		margin: 0 auto;
+		border: 1px solid dimgray;
+		box-shadow: 2px 3px 6px dimgray;
+		overflow: hidden;
+	} #banner {
+		width: 100%;
+	} h1 {
+		text-align:center;
+		font-family: Segoe, 'Segoe UI', 'DejaVu Sans', 'Trebuchet MS', Verdana, 'sans-serif';
+		font-size: 36pt;
+		font: 36/1.4em 'Segoe';
+	} p {
+		font: 14pt/1.4em Georgia;
+		width: 768px; 
+		margin: 12px auto;
+		color: darkslategray; 
+	} .text-img {
+		width: 384px; 
+		float: left;
+		margin: 0 24px 0 0;
+		border: 1px solid darkgrey;
+		box-shadow: 2px 3px 6px darkgrey;
+	} .drop-cap {
+		font-size:3em;
+		float: left;
+		line-height: 1.0em;
+		margin: 0 0 -6px 0;
+	} ul {
+		width: 96.125%;
+		height: 40px;
+		background: darkkhaki;
+		display: grid;
+		grid-template: auto / repeat(7,auto);
+	} li {
+		height: 40px;
+		text-align: center;
+		font: 14pt/2.1em Georgia;
+		list-style: none;
+	} a {
+		color: black;
+		text-decoration: none;alignment-baseline: 
+	} a li:hover {
+		background: khaki;
+	}
+	/* Moving image waddles */
+	#waddles {
+		position: relative;
+		top: 0;
+		left: -120px;
+		width: 100px;
+		animation-name: letsgo;
+		animation-duration: 5s;
+		animation-timing-function: ease-out;
+		animation-fill-mode: forwards;
+		animation-play-state: running;
+	}
+	/* Fixed image Mabel */
+	#mabel {
+		width: 200px;
+		position: relative;
+		top: 0;
+		left: 700px;
+	} #animation {
+		width: 100%;
+		height: auto;
+	} @keyframes letsgo {
+		0% {left: -120px;}
+		100% {left: 720px;}
+	}
+</style>
+</head>
+
+<body>
+	<div id="page">
+		<img id="banner" src="ian-worrel-attic-lantern.jpg" alt="landscape caricature of a loft with 2 beds, a desk, and a makeup stand" />
+		<ul>
+			<a href="index.html"><li>Home</li></a>
+			<a href="portfolio.html"><li>Characters</li></a>
+			<a href="video.html"><li>Video</li></a>
+			<a href="table.html"><li>Bonus Media</li></a>
+			<a href="grid.layout.html"><li>Promotional Material</li></a>
+			<li>Animation</li>
+			<a href="form.html"><li>Contact</li></a>
+		</ul>
+	
+	<div id="animation">
+		<!-- First Image -->
+	<img id="waddles" src="waddles2.png" alt="caricature of a pink pet pig with a birth mark" />
+		<!-- Second Image -->
+	<img id="mabel" src="Mabel_Pines.png" alt="cariature of a brown-haired girl named Mable Pines wearing a hot pink sweatshirt and purple skirt" />
+	</div>
+	<h1>Mabel and Waddles' Friendship</h1>
+	<p>Mabel Pines is one of the cheerful twin protagonists of Gravity Falls, known for her optimism, colorful sweaters, energetic imagination, and deep affection for her friends and family. Among her closest bonds is her relationship with Waddles, a pet pig she instantly adores after winning him at the Mystery Fair in the episode “The Time Traveler’s Pig.” Mabel first meets Waddles during a pig competition at the fair, where she enters him almost on a whim and quickly becomes emotionally attached, seeing him as the perfect companion. When she learns that Waddles would otherwise be given away, she becomes determined to keep him, even choosing her friendship with him over changing events to secure a crush’s affection. From then on, Waddles becomes her constant sidekick throughout the series, symbolizing Mabel’s loyalty, empathy, and childlike capacity to love wholeheartedly.</p>
+		
+	</div>
+</body>
+<script>
+const waddles = document.getElementById('waddles');
+
+document.getElementById('startBtn').onclick = () => {
+waddles.style.animationPlayState = 'running';
+};
+
+document.getElementById('pauseBtn').onclick = () => {
+waddles.style.animationPlayState = 'paused';
+};
+
+document.getElementById('rewindBtn').onclick = () => {
+/* Remove the animation */
+waddles.style.animation = 'none';
+
+/* Force reflow so the animation can restart */
+void waddles.offsetWidth;
+
+/* Reapply the animation */
+waddles.style.animation = 'letsgo 4s linear';
+
+/* Keep the animation paused at the beginning */
+waddles.style.animationPlayState = 'paused';
+};
+</script>
+</html>
